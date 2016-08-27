@@ -35,30 +35,18 @@ void node_free(tree_t n) {      /* this free mem for a single node */
 
 void bst_free(tree_t bst){     /* this apply node_free to all node,
 									using postorder trversal        */
-	tree_postorder(bst, node_free);
+	fprintf(stderr, "bst_free: IMPLEMENT ME FIRST!\n\n");
+	exit(EXIT_FAILURE);
 }
 
 /* insert a data item "elem" into the BST "bst" if possible;
    Returning:
 		EXIT_SUCCESS: if succesful
-		EXIT_FAILURE -1 if not successful ("elem" already on tree) 
+		EXIT_FAILURE: if not successful ("elem" already on tree) 
 ------------------------------------------------------------------- */  	
 int bst_insert(tree_t *bst, key_t elem){
-	tree_t t= *bst;
-	if (t == NULL) {
-		t= my_calloc(1,sizeof(t));
-		t->key= elem;
-		t->left= t->right= NULL;
-		*bst= t;
-		return EXIT_SUCCESS;
-	}
-	if (elem < t->key) return bst_insert(&(t->left), elem);
-	else if (elem > t->key) return bst_insert(&(t->right), elem);
-	else {
-		fprintf(stderr, "bst_insert: cannot insert, "
-						"%d already in the tree\n",elem);
-		return EXIT_FAILURE;
-	}
+	fprintf(stderr, "bst_insert: IMPLEMENT ME FIRST!\n\n");
+	exit(EXIT_FAILURE);
 }
  
 
@@ -109,7 +97,7 @@ NOTES:
 ------------------------------------------------------------------- */		
 
 #define NO_KEY -1000	
-#define MAX_LEVEL 4
+#define MAX_LEVEL 5
 #define MAX_N ( (1<<MAX_LEVEL)-1 ) 
 #define MAX_LEAVES (  1<<(MAX_LEVEL-1) ) 
 void tree2array(tree_t t, int pos, int keys[]) {
