@@ -15,28 +15,11 @@
 
 void merge( int a[], int b[], int c[], int m, int n )
 {
-  int i = 0, j = 0, k = 0;
-  while (i < m && j < n)
-  {
-    if( a[i] < b[j] )
-    {
-      c[k++] = a[i++];
-    }
-    else
-    {
-      c[k++] = b[j++];
-    }
-  }
- 
-  while ( i < m )
-  {
-    c[k++] = a[i++];
-  }
- 
-  while ( j < n )
-  {
-    c[k++] = b[j++];
-  }
+  int i = 0,    // let i walks through array a 
+      j = 0,    // let j walks through array b
+	  k = 0;    // choose the lesser of a[i], b[j] and copy to c[k]
+  /* IMPLEMENT ME */
+	 
 }
 
 
@@ -56,12 +39,13 @@ void merge_sort( int a[], int n )
   	// "size" is the common size of 2 arrays we want to merge 
   	for( size = 1; size < n; size *= 2 )
   	{
-        // Change here: at the end of array, we might have not enough
-  		//    size elements ...
    		for( j = 0; j < (n - size); j += 2 * size )
       	{
-			// marge a[j..j+size-1] with a[j+size..j+2*size-1]
-			//    into tmp[j..j+2*size-1]
+			// at j-th element, so there are n-j more elements to process  
+			
+			// merge       size elems from a[j]
+    		//       with  size elems from a[j+size]
+			//    into tmp, from position j
         	merge(a + j, a + j + size, tmp + j, size, size);
       	}
 		// copy tmp  to a
@@ -95,3 +79,57 @@ int main(int argc, char *argv[]) {
 	}
 	return 0;
 }
+
+
+
+
+/* === DONT'T LOOK AT THE REST
+       BECAUSE IT SHOWS PART OF THE SOLUTION
+       READ IT ONLY AFTER YOU"VE DONE THE EXERCISE 
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#if 0
+void merge( int a[], int b[], int c[], int m, int n )
+{
+  int i = 0, j = 0, k = 0;
+  while (i < m && j < n)
+  {
+    if( a[i] < b[j] )
+    {
+      c[k++] = a[i++];
+    }
+    else
+    {
+      c[k++] = b[j++];
+    }
+  }
+ 
+  while ( i < m )
+  {
+    c[k++] = a[i++];
+  }
+ 
+  while ( j < n )
+  {
+    c[k++] = b[j++];
+  }
+}
+
+#endif
