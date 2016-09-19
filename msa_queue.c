@@ -204,6 +204,7 @@ int main(int argc, char *argv[]) {
 
 
 #if 0
+// THIS IS A SOLUTION FOR standard merge_sort, not natural merge_sort
 //
 // bottom-up merge sort array a of n elements
 // returns number of elemenst examined by the merge process
@@ -225,6 +226,7 @@ int merge_sort( int a[], int n )
   		// tmp is used for "merge"
 
   // first, init the queue using initial array a[]
+  //   for natural mergesort, you need to change the next line
   for (i=0; i<n; i++) enqueue(1, q);
 
   
