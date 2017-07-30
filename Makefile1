@@ -1,0 +1,25 @@
+
+# Anh Vo, for unimelb.COMP20003.workshop.week2
+# the lines preceded by # are just comments
+#
+
+# Below: "toy" is a target 
+#        target toy has 3 dependencies: intArray.c, prime.c, and main.c
+#        and 1 associated command "gcc ..."
+# From command prompt, if we run
+#        make toy         (or "make")
+#        the command "gcc ..." will be executed
+# When we run "make toy" again, the command "gcc..." will be
+#  	executed only if at least one of the dependencies intArray.c, prime.c, and main.c
+#  	has been changed since the previous run of "make toy"
+#
+# NOTE: there is 1, and only 1, TAB character before each command like "gcc..."
+toy: intArray.c prime.c main.c
+	gcc -g -o toy main.c prime.c intArray.c
+
+
+# clean is a target, too
+# 	"make clean" will delete all the files produced by "gcc" above
+#
+clean: 
+	rm -f *.o toy

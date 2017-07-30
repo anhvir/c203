@@ -1,0 +1,22 @@
+# define C compiler & flags
+CC = gcc
+CFLAGS = -Wall
+
+# define libraries to be linked (for example -lm)
+LIB = 
+
+HDR = prime.h intArray.h
+SRC = intArray.c prime.c main.c
+# OBJ is the same as SRC, just replace .c with .h
+OBJ     = $(SRC:.c=.o)
+ 
+# the executable name
+EXE = toy
+
+
+$(EXE): $(OBJ) Makefile
+	$(CC) $(CFLAGS) -o $(EXE) $(OBJ) $(LIB)
+clean:: 
+	rm -f $(OBJ) $(EXE)
+
+$(OBJ): $(HDR)
