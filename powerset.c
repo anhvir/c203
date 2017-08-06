@@ -2,6 +2,15 @@
    Skeleton Program for 
    computing, storing and printing out in binary format the powerset
    of an alphabet having size of at least 1 and at most N_MAX 
+
+   Your task:
+     (1) Learn from the program:
+          (a) use of argc, argv
+          (b) recursive powerset
+ 
+     (2) Complete this program and Makefile, test your program
+     (3) IMPORTANT: Remember well how to do malloc and free
+     (3) Implement from scratch a non-recursive program for powerset
 */
    
    
@@ -38,10 +47,10 @@ int main(int argc, char *argv[]) {
 
     /* ---FIXME: How to allocate memory  ------------------------- */
     a= malloc(?)       
-    ps= malloc ( ? );   /* first, allocate memory so that
+//    ps= malloc ( ? );   /* first, allocate memory so that
                            ps can hold pn pointer to char, ie pn string */
 	for (i=0; i<pn; i++) {
-		?;
+//		?;
                         
     }
 
