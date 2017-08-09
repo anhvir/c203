@@ -1,6 +1,6 @@
 
-OBJ = intArray.o prime.o main.o
-EXE = toy
+OBJ = powerset.o
+EXE = powerset
 
 CC = gcc
 CFLAGS = -Wall

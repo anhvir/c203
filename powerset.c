@@ -8,7 +8,8 @@
           (a) use of argc, argv
           (b) recursive powerset
  
-     (2) Complete this program and Makefile, test your program
+     (2) Complete this program and Makefile, test your programo
+         (in this program, look for FIXME and change/add lines)
      (3) IMPORTANT: Remember well how to do malloc and free
      (3) Implement from scratch a non-recursive program for powerset
 */
@@ -28,7 +29,7 @@ void print_pset(char **ps, int num);
 int main(int argc, char *argv[]) {
 	int n;     /* size of alphabet */
 	int pn;    /* =2^n, number of elements in powerset array ps[] */
-    // FIXME: the next 2 lines contain errors
+    // FIXME: the next 2 lines are errorneous !
 	char a,   /* string for containing the current set of powerset ps[] */  
 	 	 ps; /* the powerset, which is array of 2^n strings,
                         each string is of lenght n */
@@ -46,9 +47,9 @@ int main(int argc, char *argv[]) {
                      can also use pn= (int) pow(2,n)  */
 
     /* ---FIXME: How to allocate memory  ------------------------- */
-    a= malloc(?)       
-//    ps= malloc ( ? );   /* first, allocate memory so that
-                           ps can hold pn pointer to char, ie pn string */
+//    a= malloc(?)       
+//    ps= malloc ( ? );   /* first, allocate memory so that         */
+                          /* ps can hold pn pointer to char, ie pn string */
 	for (i=0; i<pn; i++) {
 //		?;
                         
@@ -63,7 +64,7 @@ int main(int argc, char *argv[]) {
 
     /* ------- free memory       -------------------------------------- */
     /* A good rule for doing "free" is "1 free for 1 malloc"
-       FIXME: how o do that?                                       */
+       FIXME: write your code for free() here?                                       */
 
 
 
