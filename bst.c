@@ -119,7 +119,7 @@ void tree2array(tree_t t, int pos, int keys[]) {
 
 void tree_print(tree_t t){
 	int keys[MAX_N];      /* array of key to be printed, in order */
-	int i, level, left, right;
+	int i, j, level, left, right;
  
  	if (!t) {
 		printf("The tree is empty, nothing printed!\n\n");
@@ -139,7 +139,7 @@ void tree_print(tree_t t){
 		if (level>1) {
 			int finish= 1;
 			for (i=left; i<=right; i++) {
-				for (int j=0; j<spaces; j++) printf(" ");
+				for (j=0; j<spaces; j++) printf(" ");
 				if (keys[i] != NO_KEY) {
 					finish= 0;
 					if ( i%2 ) printf ("  /"); else printf (" \\ ");
@@ -151,7 +151,7 @@ void tree_print(tree_t t){
 		// printing the keys
 		spaces = (MAX_LEAVES * 3 - 3*leaves)/(leaves+1);
 		for (i=left; i<=right; i++) {
-			for (int j=0; j<spaces; j++) printf(" ");
+			for (j=0; j<spaces; j++) printf(" ");
 			if (keys[i] != NO_KEY) {
 				if ( i%2 ) printf ("%2d ",keys[i]); 
 				else printf ("%3d", keys[i]);
