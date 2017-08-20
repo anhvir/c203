@@ -14,19 +14,31 @@ CFLAGS = -Wall
 LIB = 
 
 
-HDR = bst.h
-SRC = bst.c bst_main.c
+HDR1 = bst.h
+SRC1 = bst.c bst_main.c
+
+HDR2 = stack.h
+SRC2 = stack.c postfix.c
 
 # OBJ is the same as SRC, just replace .c with .h
-OBJ = $(SRC:.c=.o)
+OBJ1 = $(SRC1:.c=.o)
+OBJ2 = $(SRC2:.c=.o)
 
 # the executable name
-EXE = bst
+EXE1 = bst
+EXE2 = postfix
 
-$(EXE): $(OBJ) Makefile
-	$(CC) $(CFLAGS) -o $(EXE) $(OBJ) $(LIB) 
+all: $(EXE1) $(EXE2)
+
+$(EXE1): $(OBJ1) Makefile
+	$(CC) $(CFLAGS) -o $(EXE1) $(OBJ1) $(LIB) 
+
+$(EXE2): $(OBJ2) Makefile
+	$(CC) $(CFLAGS) -o $(EXE2) $(OBJ2) $(LIB) 
+
 
 clean: 
-	rm -f $(OBJ) $(EXE)
+	rm -f $(OBJ1) $(EXE1) $(OBJ2) $(EXE2)
 
-$(OBJ): $(HDR)
+$(OBJ1): $(HDR)
+$(OBJ2): $(HDR2)
