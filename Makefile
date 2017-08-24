@@ -1,10 +1,5 @@
+# Sample Makefile with multiple goals
 # You can copy this Makefile to use with any other project
-# The only things you should change are:
-#   - line 11, if you want to add flags, for example, -g for debugging    
-#   - line 14, where you add library, for example: LIB = -lm
-#   - line 17: replace the .h files by new .h files 
-#   - line 18: replace the .c files by new .c files
-#   - line 24: replace "toy" by the name for the executable file
 
 # define C compiler & flags
 CC = gcc
@@ -40,5 +35,5 @@ $(EXE2): $(OBJ2) Makefile
 clean: 
 	rm -f $(OBJ1) $(EXE1) $(OBJ2) $(EXE2)
 
-$(OBJ1): $(HDR)
+$(OBJ1): $(HDR1)
 $(OBJ2): $(HDR2)
