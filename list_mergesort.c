@@ -31,6 +31,8 @@
 
 void list_mergesort(list_t *pl);
 
+// main() already fully implemented
+//  you can choose to implement it from scratch
 int main(int argc, char *argv[]) {
 	int n= N;
 	int i, key;
@@ -41,8 +43,7 @@ int main(int argc, char *argv[]) {
 	// (1) insert n random-elements into the list
 	for (i=0; i<n; i++) {
 		key= MIN + ( rand() % (MAX-MIN+1) );
-		// insert "key" into the list
-        // FIX ME
+		insertL(&l, key);
 	}	
     // print original list
 	printf("Original list:\n");
@@ -71,12 +72,15 @@ list_t mergeL(list_t a, list_t b) {
 
 
 // FIX ME
+// Note: you also can use this for list_adaptive_mergesort
+//                                 ("natural" mergesort) 
 void list_mergesort(list_t *pl) {
 	// (0) create an empty queue
 	queue_t q= createQ();
 
     printf("------ list_mergesort not yet implemented! Do it! \n");
 	// (1) break the list into n single list and put them into the queue	
+    //     OR into sorted sublists (for natural mergesort)
 	list_t l= *pl;   // temporal variable to replace *pl
  
     // (2) process queue until having single element
