@@ -39,6 +39,8 @@ qdata_t deQ(queue_t *pq);
 // return number of element in queue q
 int nQ(queue_t q);
 
+// you might want to add function freeQ
+
 
 
 #endif
