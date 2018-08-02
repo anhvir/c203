@@ -9,7 +9,7 @@ In addition to class exercies:
 
     * First, copy `Makefile1` to `Makefile` (using command `cp Makefile1 Makefile`, and try `make`,
     * Then, run the executable `afriend`,
-    * No, you probably saw that the program crashed. Use `gdb` to find errors and fix the program.
+    * Now, you probably saw that the program crashed. Use `gdb` to find errors and fix the program.
 
 -------------------------------------------------------------
 by anhvir@gmail.com, for use in unimelb COMP20003 workshops.
