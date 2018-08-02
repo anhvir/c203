@@ -4,7 +4,7 @@
 In addition to class exercies:
   * Download this whole **c203** directory by clicking **Clone or Download** --> **Download ZIP**, it will normally be downloaded to your **Downloads** directory
   * Copy the directory **c203** from **Downloads** to your working directory
-  * Try to compile and use `make` for helloworld.c
+  * Try to compile and use `make` for `helloworld.c`
   * Playing with `make` and `gdb` using `random_friend.c`: 
 
     * First, copy `Makefile1` to `Makefile` (using command `cp Makefile1 Makefile`, and try `make`,
