@@ -11,7 +11,9 @@ In addition to class exercies:
     * Then, run the executable `afriend`,
     * Now, you probably saw that the program crashed. Use `gdb` to find errors and fix the program.
   * Explore `Makefile2` and `Makefile3`. They are equivalent to `Makefile1` but are in a more conventional and useful format. Next week we will see the use of `Makefile2` and `Makefile3` in a more complicated context.
- 
+
+-------------------------------------------------------------
+Note: For this week, the workshop slides are also included as a .PDF file. Enjoy! 
 -------------------------------------------------------------
 by anhvir@gmail.com, for use in unimelb COMP20003 workshops.
 
