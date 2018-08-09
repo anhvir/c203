@@ -1,9 +1,9 @@
 
-OBJ = random_friend.o
-EXE = afriend
+OBJ = intArray.o prime.o main.o
+EXE = toy
 
 CC = gcc
-CFLAGS = -g -std=c99
+CFLAGS = -Wall
 
 $(EXE): $(OBJ) Makefile
 	$(CC) $(CFLAGS) -o $(EXE) $(OBJ)

@@ -1,15 +1,17 @@
 
-# the next 3 lines define 3 macros, for example, CC is defined as "gcc"
+# the next 3 lines define 3 macros, for example, macro CC is the same as gcc
 CC = gcc
-FILES = random_friend.c
-EXE = afriend
+FILES = main.c intArray.c prime.c
+EXE = toy 
 
 
-# in the next 2 lines: "$(FILES)" is equivalent to "random_friend.c"
-#                      "$(EXE)" is equivalent to "afriend"
+# in the next 2 lines: "$(FILES)" is equivalent to "main.c intArray.c prime.c"
+#                      "$(EXE)" is equivalent to "toy"
 #                      "$(CC)"  is equivalent to "gcc"  
 $(EXE): $(FILES)
 	$(CC) -o $(EXE) $(FILES)
 
 clean: 
-	rm -f *.o $(EXE)
+	rm -f *.o toy
+
+# Notes: This version of Makefile is just equivalent to Makefile1
