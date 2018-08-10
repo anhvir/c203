@@ -6,9 +6,9 @@ Content for this week: a number of file for a software called `toy`:
   * `main.c` : the main program that actually employ the fuctions defined in the above module to do some (kind of) experiment on primr numbers
   * `Makefile1`, `Makefile2`, `Makefile3`, `Makefile4` : these files are all equivalent to some extent, and is a valid candidate for the `Makefile` of this `toy` project. If you want to use, say, `Makefile4` you need to:
 
-         `cp Makefile 4 Makefile`
+         ```cp Makefile 4 Makefile
 
-          `make`
+         ```make
  
     and that `make` will compile the `toy` software for you.
   * Why 4 versions of `Makefile`? Just only for you to compare them and learn a bit about Makefile.   
@@ -22,21 +22,10 @@ If you want to download the whole directory:
   * Then copy or move the folder `c203` from `Downloads` to under your working folder `week3/`
   * If the downloaded `c203-master` has the extension `.ZIP`, you likely need to expand the zipped file with command `unzip c203-master.ZIP`
  
-
-
-In addition to class exercies:
-  * Download this whole **c203** directory by clicking **Clone or Download** --> **Download ZIP**, it will normally be downloaded to your **Downloads** directory
-  * Copy the directory **c203** from **Downloads** to your working directory
-  * Try to compile and use `make` for `helloworld.c`
-  * Playing with `make` and `gdb` using `random_friend.c`: 
-
-    * First, copy `Makefile1` to `Makefile` (using command `cp Makefile1 Makefile`, and try `make`,
-    * Then, run the executable `afriend`,
-    * Now, you probably saw that the program crashed. Use `gdb` to find errors and fix the program.
-  * Explore `Makefile2` and `Makefile3`. They are equivalent to `Makefile1` but are in a more conventional and useful format. Next week we will see the use of `Makefile2` and `Makefile3` in a more complicated context.
-
 -------------------------------------------------------------
+
 Note: For this week, the workshop slides are also included as a .PDF file. Enjoy! 
+
 -------------------------------------------------------------
 by anhvir@gmail.com, for use in unimelb COMP20003 workshops.
 
