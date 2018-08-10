@@ -4,13 +4,13 @@ Content for this week: a number of file for a software called `toy`:
   * `intArray.h` and `intArray.c`: functions for generating a random array and counting number of prime numbers in an array
   * `prime.h` and `prime.c`: functions for checking if a number is a prime number and ...
   * `main.c` : the main program that actually employ the fuctions defined in the above module to do some (kind of) experiment on primr numbers
-  * `Makefile1`, `Makefile2`, `Makefile3`, `Makefile4` : these files are all equivalent to some extent, and is a valid candidate for the `Makefile` of this `toy` project. If you want to use, say, `Makefile4` you need to:
+  * `Makefile1`, `Makefile2`, `Makefile3`, `Makefile4` : these files are all equivalent to some extent, and is a valid candidate for the `Makefile` of this `toy` project. If you want to use, say, `Makefile4` you need to:`
 
-```      cp Makefile 4 Makefile
+      cp Makefile 4 Makefile
 
-```      make
+      make
  
-    and that `make` will compile the `toy` software for you.
+    `and that `make` will compile the `toy` software for you.
   * Why 4 versions of `Makefile`? Just only for you to compare them and learn a bit about Makefile.   
 
 If you just want a single file, say, `main.c`:
