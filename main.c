@@ -1,33 +1,24 @@
-/* Anh Vo, anhvir@gmail.com, for unimelb.COMP20003.Workshop.Week2 */
+// NOTES:
+// This file was extracted from LMS -> Workshop -> Week 4 -> Week 04 - Workshop.ipynb
+//   anhvir@gmail.com might enter some very tiny changes
+//   in such cases " /*tiny change*/ " is added at the end of changed lines
+      
+/* main.c */
+//%stdin: "8 4 9 11 6 7 1 5 3 14 10 13 2"
+#include <stdio.h>
+#include <stdlib.h>
+#include "bst.h" 
 
-/* This file is a driver for toy,
-	it calls functions in prime.c and intArray.c.
-   Purpose: builds array of random values and 
-			print the elements that are prime,
-   			also prints the percentage of prime elements.  
-*/
+int main(int argc, char **argv){
+    int inputData;
+    struct bst *bst = NULL;
+    while(scanf("%d",&inputData) > 0){
+        bst = bstInsert(bst, inputData);
+    }
 
-#include <stdio.h>			/* for using scanf/printf				 		*/
-#include "intArray.h"
+    drawTree(bst);
+    
+    freeTree(bst);
 
-#define ARRAY_SIZE_MAX 100
-#define MIN 1
-#define MAX 100
-
-int main(int argc, char *argv[]) {
-	int a[ARRAY_SIZE_MAX];
-	int n;
-	
-	printf ("Enter number of elements in array: ");
-	scanf("%d", &n);
-	
-    arrayGenRandom(a, n, MIN, MAX);
-	
-	arrayPrintPrime(a, n);
-
-	return 0;
-} 
-	
-
-
-
+    return 0;
+}
