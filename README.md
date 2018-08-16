@@ -1,21 +1,14 @@
  c203 Week 03:
 =======
-Content for this week: a number of file for a software called `toy`:
-  * `intArray.h` and `intArray.c`: functions for generating a random array and counting number of prime numbers in an array
-  * `prime.h` and `prime.c`: functions for checking if a number is a prime number and ...
-  * `main.c` : the main program that actually employ the fuctions defined in the above module to do some (kind of) experiment on primr numbers
-  * `Makefile1`, `Makefile2`, `Makefile3`, `Makefile4` : these files are all equivalent to some extent, and is a valid candidate for the `Makefile` of this `toy` project. If you want to use, say, `Makefile4` you need to:
+  * `all.c` : is exactly the script in Question 1 of the workshop sheet this week, you can use that file as a single .c file, the reason I put it here is just for your convevience: if you copy from here you don't have the indentation problems as in the case of copying from the .PDF version.
+  * the files: llqueue.h, llqueue.c, bst.h, bst.c, and main.c are extracted from all.c to make a multi-file C project. Again, the job of cutting all.c into these files is simple, and you might just want to do it yourself.
+  * Makefile, which is the Makefile of last week `toy` software, ith an additional target `all ` for compiling all.c. If you edit it correctly you should be able to run `make bst` or just `make` to compile the bst software, and run `make all` to compile the `all.c`.
+  * JOB: obviously you need to implement some functions inside bst.c. 
 
-      cp Makefile 4 Makefile
 
-      make
- 
-    and that `make` will compile the `toy` software for you.
-  * Why 4 versions of `Makefile`? Just only for you to compare them and learn a bit about Makefile.   
-
-If you just want a single file, say, `main.c`:
-  * Click on `main.c` and you will see its content 
-  * Copy the content and paste into your jEdit/editor window, then save as `main.c`
+If you just want a single file, say, `all.c`:
+  * Click on `all.c` and you will see its content 
+  * Copy the content and paste into your jEdit/editor window, then save as `all.c`
 
 If you want to download the whole directory:
   * Download this whole directory by clicking `Clone or Download` --> `Download ZIP`, it will normally be downloaded to your `Downloads` folder under the name `c203-master` or `c203-master.ZIP`
