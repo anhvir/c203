@@ -25,26 +25,12 @@ struct bst {
 */
 struct bst *bstInsert(struct bst *parent, int data){
     /* Write this function. */
-    if (parent) {
-		if (data < parent->data) parent->left= bstInsert(parent->left,data);    
-		else if (data > parent->data) parent->right= bstInsert(parent->right,data);
-        return parent;  /* note: not inserting duplicated */
-	}
-	struct bst *node= calloc(1, sizeof(*node));
-	assert(node);
-	node->left= node->right= NULL;
-	node->data= data;
-	return node;    /* FIXME: you need to "return" the root of the new tree
-	                          (the tree after inserting a new node)        */      
 }
 
 void freeTree(struct bst *parent){
     if(!parent){
         return;
     }
-	freeTree(parent->left);
-	freeTree(parent->right);
-	free(parent);
     /* Fill in function according to function description. */
 }
 
