@@ -1,14 +1,12 @@
-# You can copy this Makefile to use with any other project
-# The only things you should change are:
-#   - line 11, if you want to add flags, for example, -g for debugging    
-#   - line 14, where you add library, for example: LIB = -lm
-#   - line 17: replace the .h files by new .h files 
-#   - line 18: replace the .c files by new .c files
-#   - line 24: replace "toy" by the name for the executable file
+# an example of Makefile with 2 main targets
 
 # define C compiler & flags
-CC = gcc
-CFLAGS = -Wall
+CC = gcc 
+CFLAGS = -Wall -g
+# the above flag is for testing your program, 
+# for doing experiments you should cahned it to:
+# CFLAGS = -Wall -O3
+ 
 
 # define libraries to be linked (for example -lm)
 LIB = 
@@ -28,6 +26,11 @@ OBJ2 = $(SRC2:.c=.o)
 EXE1 = bst
 EXE2 = postfix
 
+
+# we have 2 tagets defined as $(EXE1) and $(EXE2) in lines 36 and 39 
+#   here we add another handy target "all" with include both,
+#   so that when yopu run "make all", both targets will be excecuted
+
 all: $(EXE1) $(EXE2)
 
 $(EXE1): $(OBJ1) Makefile
@@ -36,9 +39,9 @@ $(EXE1): $(OBJ1) Makefile
 $(EXE2): $(OBJ2) Makefile
 	$(CC) $(CFLAGS) -o $(EXE2) $(OBJ2) $(LIB) 
 
-
 clean: 
 	rm -f $(OBJ1) $(EXE1) $(OBJ2) $(EXE2)
 
+# the dependencies of $(OBJ1) and $(OBJ2)
 $(OBJ1): $(HDR)
 $(OBJ2): $(HDR2)
