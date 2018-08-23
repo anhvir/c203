@@ -1,9 +1,9 @@
  c203 Week 03:
 =======
-  * `all.c` : is exactly the script in Question 1 of the workshop sheet this week, you can use that file as a single .c file, the reason I put it here is just for your convevience: if you copy from here you don't have the indentation problems as in the case of copying from the .PDF version.
-  * the files: llqueue.h, llqueue.c, bst.h, bst.c, and main.c are extracted from all.c to make a multi-file C project. Again, the job of cutting all.c into these files is simple, and you might just want to do it yourself.
-  * Makefile, which is the Makefile of last week `toy` software, ith an additional target `all ` for compiling all.c. If you edit it correctly you should be able to run `make bst` or just `make` to compile the bst software, and run `make all` to compile the `all.c`.
-  * JOB: obviously you need to implement some functions inside bst.c. 
+  * `postfix.c` : a program that employ stack to evaluate (that is, compute the value of) postfix expressions (also referred to as Polish prefix notation) such as 3 5 6 + *   (2hich is equivalenyt to  3*(5+6)   
+  * `stack.c` and `stack.h`: modules for array-based stack, you can also do the version of list-based stack, skeleton of which is in LMS this week 
+  * `bst_main.c`, `bst.h`, `bst.c`: another implementation of last-week bst
+  * Makefile: the Makefile for 2 main targets: bst and postfix
 
 
 If you just want a single file, say, `all.c`:

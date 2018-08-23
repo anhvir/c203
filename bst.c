@@ -1,156 +1,169 @@
-// NOTES:
-// This file was extracted from LMS -> Workshop -> Week 4 -> Week 04 - Workshop.ipynb
-//   anhvir@gmail.com might enter some very tiny changes
-//   in such cases " /*tiny change*/ " is added at the end of changed lines
-      
+/* Anh Vo, anhvir@gmail.com, for COMP20003 @ unimelb
+   bst*.[c,h]: skeleton program
+               demonstrating how to manipulate binary tree and BST
 
-/* bst.c */
+	
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
 #include <string.h>
-#include "llqueue.h" 
-#include "bst.h" 
 
-struct bst {
-    struct bst *left;
-    struct bst *right;
-    int data;
-};
+#include "bst.h"
 
-/* 
-    The function you are to write. Takes a parent pointer (null for the root),
-    and returns the tree with the child in the right position. Returns the
-    item in a new tree with null left/right pointers.
-*/
-struct bst *bstInsert(struct bst *parent, int data){
-    /* Write this function. */
+
+/* --------------- utilities -----------------------------*/
+/* safe allocating memory for "n" cells, "size" bytes each */ 
+void *safe_malloc(int size) {
+	void *p= malloc(size);
+	if ( !p ) {
+		fprintf(stderr, "malloc() FAILED to allocate memory\n");
+		exit(EXIT_FAILURE);
+	}
+	return p;
 }
 
-void freeTree(struct bst *parent){
-    if(!parent){
-        return;
-    }
-    /* Fill in function according to function description. */
+void *safe_calloc(int n, int size) {
+	void *p= calloc(n, size);
+	if ( !p ) {
+		fprintf(stderr, "calloc() FAILED to allocate memory\n");
+		exit(EXIT_FAILURE);
+	}
+	return p;
+}
+/*----------------------------------------------------------*/
+
+
+
+
+/* free all memory used by tree "bst" ----------------------------- */
+void node_free(tree_t n) {      /* this free mem for a single node */
+	free(n);
 }
 
-/* Calculate the number of spaces which need to appear before and after the 
-    data point at a given depth to allow a single character to occur in all 
-    children below it. */
-int spacesAtDepth(int depth);
-
-/* Calculate the depth to the deepest child of a given node. */
-int countDepth(struct bst *parent);
-
-
-#define UNIT_SPACE " "                                        /*tiny change*/ 
-void print_spaces(int n) {  // just print UNIT_SPACE n times  /*tiny change*/    
-	printf("%*s", (int) (n * strlen(UNIT_SPACE))," ");        /*tiny change*/
-}                                                             /*tiny chnage*/ 
-
-/* Draws the tree. You will need to change this if your bst uses different names. */
-/* You needn't understand how this works, but you're welcome to try. */
-void drawTree(struct bst *parent){
-    if(!parent){
-        /* Done, no tree to print. */
-        return;
-    }
-    
-    struct llqueue *currentQueue = newQueue();
-    struct llqueue *nextQueue = newQueue();
-    /* Used for swapping. */
-    struct llqueue *tempQueue;
-    /* Current node being processed */
-    struct bst *current;
-    
-    /* The depth of the parent, used to work out where to place the value. */
-    int depth = countDepth(parent);
-
-    /* The number of spaces needed at the current level before and after each
-        data value. */
-    int spaces = spacesAtDepth(depth);
-
-    
-    /* Add the parent node to the queue. */
-    queue(&currentQueue, parent);
-    
-    while(!empty(currentQueue) && depth >= 0){
-        current = (struct bst *) dequeue(currentQueue);
-		print_spaces(spaces);                                       /*tiny change*/
-        if(current){
-            printf("%*d",(int) strlen(UNIT_SPACE),current->data);   /*tiny change*/
-        } else {
-			print_spaces(1);                                        /*tiny change*/
-        }
-		print_spaces(spaces);                                       /*tiny change*/
-        /* Account for parent's space */
-		print_spaces(1);                                            /*tiny change*/
-
-        /* Queue any children for next row */
-        if(current && current->left){
-            queue(&nextQueue, current->left);
-        } else {
-            /* Mark empty space so spacing stays consistent. */
-            queue(&nextQueue, NULL);
-        }
-
-        if(current && current->right){
-            queue(&nextQueue, current->right);
-        } else {
-            /* Mark empty space so spacing stays consistent. */
-            queue(&nextQueue, NULL);
-        }
-        
-        if(empty(currentQueue)){
-            /* Start new row. */
-            printf("\n");
-            /* Update depth information. */
-            depth--;
-            spaces = spacesAtDepth(depth);
-            
-            /* Swap the new row to the current row. */
-            tempQueue = currentQueue;
-            currentQueue = nextQueue;
-            nextQueue = tempQueue;
-        }
-    }
-    /* If we reach depth 0, the queue may still have contents
-        we must empty first. */
-    while(!empty(currentQueue)){
-        current = (struct bst *) dequeue(currentQueue);
-    }
-    if(tempQueue){
-        free(nextQueue);
-    }
-    if(currentQueue){
-        free(currentQueue);
-    }
+void bst_free(tree_t bst){     /* this apply node_free to all node,
+									using postorder trversal        */
+	fprintf(stderr, "bst_free: IMPLEMENT ME FIRST!\n\n");
+	exit(EXIT_FAILURE);
 }
 
-int countDepth(struct bst *parent){
-    int leftDepth;
-    int rightDepth;
-    if(!parent){
-        /* Here we assume a leaf node is at depth -1, other choices are possible. */
-        return -1;
-    }
-    leftDepth = countDepth(parent->left);
-    rightDepth = countDepth(parent->right);
-    if(leftDepth > rightDepth){
-        return leftDepth + 1;
-    } else {
-        return rightDepth + 1;
-    }
+/* insert a data item "elem" into the BST "bst" if possible;
+   Returning:
+		EXIT_SUCCESS: if succesful
+		EXIT_FAILURE: if not successful ("elem" already on tree) 
+------------------------------------------------------------------- */  	
+int bst_insert(tree_t *bst, key_t elem){
+	fprintf(stderr, "bst_insert: IMPLEMENT ME FIRST!\n\n");
+	exit(EXIT_FAILURE);
+}
+ 
+
+/* delete the node with data "elem" from the BST "bst" if possible;
+------------------------------------------------------------------- */  	
+int bst_delete(tree_t *bst, key_t elem){
+	fprintf(stderr, "bst_delete: IMPLEMENT ME FIRST!\n\n");
+	exit(EXIT_FAILURE);
 }
 
-int spacesAtDepth(int depth){
-    int cDepth = depth;
-    int result = 1;
-    while(cDepth > 0){
-        result = 2*result + 1;
-        cDepth--;
-    }
-    return result;
+/* return the node that has key == elem 
+------------------------------------------------------------------- */  	
+tree_t bst_search(tree_t *bst, key_t elem){
+	fprintf(stderr, "bst_find: IMPLEMENT ME FIRST!\n\n");
+	exit(EXIT_FAILURE);
 }
 
+/* traversal
+	Treverse tree "t" and,
+	      with a node "n" in tree, apply function process(n)   
+------------------------------------------------------------------- */
+void tree_preorder(tree_t t,void (*process)(tree_t)){
+	fprintf(stderr, "tree_preorder: IMPLEMENT ME FIRST!\n\n");
+	exit(EXIT_FAILURE);
+}
+void tree_inorder(tree_t t,void (*process)(tree_t)){
+	fprintf(stderr, "tree_inorder: IMPLEMENT ME FIRST!\n\n");
+	exit(EXIT_FAILURE);
+}
+void tree_postorder(tree_t t,void (*process)(tree_t)) {
+	if (t) {
+		tree_postorder(t->left, process);
+		tree_postorder(t->right, process);
+		process(t);
+	}
+}
 
+/* tree_print: 
+   print a tree, level by level,
+   supposing that key_t is char
+   and that the tree high is at most 5
+NOTES:	 
+   - tree_print employs tree2keys() which is a kind of preorder traversal
+   - at this stage, if you understand tree_print(), that's great,
+ 	 but if not, no worries at all, as you will learn about
+     the underlined techniques at some stage anyway 
+
+------------------------------------------------------------------- */		
+
+#define NO_KEY -1000	
+#define MAX_LEVEL 5
+#define MAX_N ( (1<<MAX_LEVEL)-1 ) 
+#define MAX_LEAVES (  1<<(MAX_LEVEL-1) ) 
+void tree2array(tree_t t, int pos, int keys[]) {
+	if (t) {
+		keys[pos]= t->key;
+		tree2array(t->left, 2*pos+1, keys);
+		tree2array(t->right, 2*pos+2, keys);
+	}
+}
+
+void tree_print(tree_t t){
+	int keys[MAX_N];      /* array of key to be printed, in order */
+	int i, j, level, left, right;
+ 
+ 	if (!t) {
+		printf("The tree is empty, nothing printed!\n\n");
+	}
+	/* first, read tree nodes and flattern them into keys, 
+       in order required by orinting */
+	for (i=0; i<MAX_N; i++) keys[i]= NO_KEY;
+	tree2array(t,0,keys);
+
+	/* then, print from level 1 to MAX_LEVEL */
+	left= right= 0;				/* next level is in keys[left..right */
+	for (level= 1; level <= MAX_LEVEL; level++) {
+		int leaves = 1<< (level-1);
+		float spaces = (MAX_LEAVES * 3 - 3*leaves)/(leaves+1);
+		// gee, we have 16*3 positions in one line
+		// printing the branches
+		if (level>1) {
+			int finish= 1;
+			for (i=left; i<=right; i++) {
+				for (j=0; j<spaces; j++) printf(" ");
+				if (keys[i] != NO_KEY) {
+					finish= 0;
+					if ( i%2 ) printf ("  /"); else printf (" \\ ");
+				} else printf("   ");
+			}
+			printf("\n");
+			if (finish) return;
+		}
+		// printing the keys
+		spaces = (MAX_LEAVES * 3 - 3*leaves)/(leaves+1);
+		for (i=left; i<=right; i++) {
+			for (j=0; j<spaces; j++) printf(" ");
+			if (keys[i] != NO_KEY) {
+				if ( i%2 ) printf ("%2d ",keys[i]); 
+				else printf ("%3d", keys[i]);
+			} else printf("   ");
+		}
+		printf("\n");
+		
+		left= 2*left+1;
+		right= 2*right+2;
+	}
+	printf("\n");
+	return;
+}
+	
+	  	

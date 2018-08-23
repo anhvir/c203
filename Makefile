@@ -1,37 +1,44 @@
+# You can copy this Makefile to use with any other project
+# The only things you should change are:
+#   - line 11, if you want to add flags, for example, -g for debugging    
+#   - line 14, where you add library, for example: LIB = -lm
+#   - line 17: replace the .h files by new .h files 
+#   - line 18: replace the .c files by new .c files
+#   - line 24: replace "toy" by the name for the executable file
 
 # define C compiler & flags
 CC = gcc
-CFLAGS = -Wall -std=c99 -g
+CFLAGS = -Wall
 
 # define libraries to be linked (for example -lm)
 LIB = 
 
 
-HDR = prime.h int_array.h
-SRC = prime.c int_array.c main.c
+HDR1 = bst.h
+SRC1 = bst.c bst_main.c
+
+HDR2 = stack.h
+SRC2 = stack.c postfix.c
+
 # OBJ is the same as SRC, just replace .c with .h
-OBJ     = $(SRC:.c=.o)
+OBJ1 = $(SRC1:.c=.o)
+OBJ2 = $(SRC2:.c=.o)
 
 # the executable name
-EXE = toy
+EXE1 = bst
+EXE2 = postfix
 
-# this goal $(EXE) depends partly on the .o files listed in $(OBJ)
-#     if the system cannot find any of them, say XXX.o, 
-#     it will automatically issue a command:
-#        gcc $(CFLAGS) -c -o XXX.o XXX.c
-#     which actually compiles XXX.o from XXX.c
-# then, it run the final gcc command to create $(EXE) from all the .o files      
-# First target, can be run with "make toy" or just "make"
-$(EXE): $(OBJ) Makefile
-	$(CC) $(CFLAGS) -o $(EXE) $(OBJ) $(LIB)
+all: $(EXE1) $(EXE2)
 
-#second target, can be executed with "make all"
-all: all.c Makefile
-	$(CC) $(CFLAG) -o all all.c
+$(EXE1): $(OBJ1) Makefile
+	$(CC) $(CFLAGS) -o $(EXE1) $(OBJ1) $(LIB) 
 
-# third target, can be run with "make clean"
+$(EXE2): $(OBJ2) Makefile
+	$(CC) $(CFLAGS) -o $(EXE2) $(OBJ2) $(LIB) 
+
+
 clean: 
-	rm -f $(OBJ) $(EXE) all
+	rm -f $(OBJ1) $(EXE1) $(OBJ2) $(EXE2)
 
-# the following line just states the dependency of .o files on the header files, we lput it here just because we don't ant it to be the first target!
-$(OBJ): $(HDR)
+$(OBJ1): $(HDR)
+$(OBJ2): $(HDR2)
