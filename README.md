@@ -1,6 +1,6 @@
  c203 Week 03:
 =======
-  * `postfix.c` : a program that employ stack to evaluate (that is, compute the value of) postfix expressions (also referred to as Polish prefix notation) such as 3 5 6 + *   (2hich is equivalenyt to  3*(5+6)   
+  * `postfix.c` : a program that employ stack to evaluate (that is, compute the value of) postfix expressions (also referred to as `reverse Polish notation`) such as `3 5 6 + *`   (which is equivalent to our normal expression of `3*(5+6)` )   
   * `stack.c` and `stack.h`: modules for array-based stack, you can also do the version of list-based stack, skeleton of which is in LMS this week 
   * `bst_main.c`, `bst.h`, `bst.c`: another skeleton for implement last week's bst, but note that they are just skeleton! 
   * Makefile: the Makefile for 2 main targets: bst and postfix
