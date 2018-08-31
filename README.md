@@ -1,5 +1,6 @@
- c203 Week 05:  Important note: in the workshop I probably said that function `bstInsert` should compute the number of comparisons. Sorry, only `bstSearch` needs that. There is no need for `bstInsert` to return or compute the number of comparisons.
+ c203 Week 06:
 =======
+  * `06_C203_18S2.pdf`: slides for this week
   * `04_C203_18S2.pdf` and `05_C203_18S2`: slides used in workshops week 4 and week 5 
   * `postfix.c` : a program that employs stacks to evaluate (that is, compute the value of) a `postfix expression` (also referred to as `reverse Polish notation`) such as `3 5 6 + *`   (which is equivalent to our normal expression of `3*(5+6)` )   
   * `stack.c` and `stack.h`: modules for array-based stack, you can also do the version of list-based stack, skeleton of which is in LMS this week 
