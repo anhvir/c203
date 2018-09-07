@@ -12,8 +12,8 @@ CFLAGS = -Wall -g
 LIB = 
 
 
-HDR1 = bst.h
-SRC1 = bst.c bst_main.c
+HDR1 = 
+SRC1 = p6.1.c
 
 HDR2 = stack.h
 SRC2 = stack.c postfix.c
@@ -23,7 +23,7 @@ OBJ1 = $(SRC1:.c=.o)
 OBJ2 = $(SRC2:.c=.o)
 
 # the executable name
-EXE1 = bst
+EXE1 = hashtable
 EXE2 = postfix
 
 
