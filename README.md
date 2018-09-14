@@ -1,4 +1,4 @@
- c203 Week 08:
+ c203 Week 08: NEW: a new file, `DONE_bu_msort.c` was added - this is the solution to `bu_msort.c` and has heap of comments. Enjoy!
 =======
   * `08_C203_18S2.pdf`: slides for this week, and:
   * `Makefile` that has 2 targets: `bu_msort` for bottom-up mergesort based on linked lists, and `td_msort` for array-based top-down mergesort. Your duty this week is to finish `bu_msort`, and only after that you should start `td_msort`. This implementation of `bu_msort` is largely based on the file `p.7.1.c` supplied in LMS this week.
