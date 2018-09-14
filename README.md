@@ -1,11 +1,14 @@
- c203 Week 06:
+ c203 Week 08:
 =======
-  * `07_C203_18S2.pdf`: slides for this week
-  *  and some C files from last week
-  *  p6.1.c - a copy of p6.1.c from LMS this week
-  * `postfix.c` : a program that employs stacks to evaluate (that is, compute the value of) a `postfix expression` (also referred to as `reverse Polish notation`) such as `3 5 6 + *`   (which is equivalent to our normal expression of `3*(5+6)` )   
-  * `stack.c` and `stack.h`: modules for array-based stack, you can also do the version of list-based stack, skeleton of which is in LMS this week 
-  * Makefile: the Makefile for 2 main targets: bst and postfix
+  * `08_C203_18S2.pdf`: slides for this week, and:
+  * `Makefile` that has 2 targets: `bu_msort` for bottom-up mergesort based on linked lists, and `td_msort` for array-based top-down mergesort. Your duty this week is to finish `bu_msort`, and only after that you should start `td_msort`. 
+  * `bu_msort.c` and `.h`: for implementation of bottom-up mergesort, you need to implement two functions in this file.
+  *  `linked_list.c` and `.h`: a ready-to-use implementation of linked lists, it would be useful to have a look at this file and learn some techniques from here.
+  *  `queue.c` and `.h`: a ready-to-use implementation of queue. Note: yhis implementation is different from what supplied in p.7.1.c. Again, it would be useful to have a look at this file and learn some techniques from here.
+  * `main.c`: driver for testing bu_msort.
+  * `skeleton_ms_array.c`: skeleton of a single `.c` file for implementing array-based top-dowm mergesort. The sorting algorithm here is simple, but the `merge` part is a bit tricky. Full solution is povided at the end of this file. 
+  *  p7.1.c - a copy of p7.1.c from LMS this week
+  *  p7.2.c - a copy of p7.2.c from LMS this week
 
 
 If you just want a single file, say, `all.c`:

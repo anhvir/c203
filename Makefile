@@ -2,7 +2,7 @@
 
 # define C compiler & flags
 CC = gcc 
-CFLAGS = -Wall -g
+CFLAGS = -Wall
 # the above flag is for testing your program, 
 # for doing experiments you should cahned it to:
 # CFLAGS = -Wall -O3
@@ -12,19 +12,19 @@ CFLAGS = -Wall -g
 LIB = 
 
 
-HDR1 = 
-SRC1 = p6.1.c
+HDR1 = bu_msort.h linked_list.h queue.h
+SRC1 = main.c bu_msort.c linked_list.c queue.c
 
-HDR2 = stack.h
-SRC2 = stack.c postfix.c
+HDR2 = 
+SRC2 = skeleton_ms_array.c 
 
 # OBJ is the same as SRC, just replace .c with .h
 OBJ1 = $(SRC1:.c=.o)
 OBJ2 = $(SRC2:.c=.o)
 
 # the executable name
-EXE1 = hashtable
-EXE2 = postfix
+EXE1 = bu_msort
+EXE2 = td_msort
 
 
 # we have 2 tagets defined as $(EXE1) and $(EXE2) in lines 36 and 39 
