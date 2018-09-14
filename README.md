@@ -10,6 +10,9 @@
   *  p7.1.c - a copy of p7.1.c from LMS this week
   *  p7.2.c - a copy of p7.2.c from LMS this week
 
+------------------------------------------------------
+
+HOWTO download the repository to your computer:
 
 If you just want a single file, say, `all.c`:
   * Click on `all.c` and you will see its content 
