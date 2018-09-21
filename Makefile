@@ -15,8 +15,8 @@ LIB =
 HDR1 = bu_msort.h linked_list.h queue.h
 SRC1 = main.c bu_msort.c linked_list.c queue.c
 
-HDR2 = 
-SRC2 = skeleton_ms_array.c 
+HDR2 = heap.h
+SRC2 = heap.c heapMain.c 
 
 # OBJ is the same as SRC, just replace .c with .h
 OBJ1 = $(SRC1:.c=.o)
@@ -24,7 +24,7 @@ OBJ2 = $(SRC2:.c=.o)
 
 # the executable name
 EXE1 = bu_msort
-EXE2 = td_msort
+EXE2 = heaptest
 
 
 # we have 2 tagets defined as $(EXE1) and $(EXE2) in lines 36 and 39 
