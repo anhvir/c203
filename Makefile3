@@ -1,0 +1,11 @@
+
+OBJ = random_friend.o
+EXE = afriend
+
+CC = gcc
+CFLAGS = -g -std=c99
+
+$(EXE): $(OBJ) Makefile
+	$(CC) $(CFLAGS) -o $(EXE) $(OBJ)
+clean: 
+	rm -f $(OBJ) $(EXE)
