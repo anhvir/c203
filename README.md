@@ -18,9 +18,9 @@ If you just want a single file, say, **Makefile**:
   * Copy the content and paste into your editor's window before saving on a driver. The easiest way to copy is (a) click on `Raw` to see the plain text content, then (b) press Ctrl-A then Ctrl-C to copy the whole content.  
 
 If you want to download the whole directory:
-  * Download this whole directory by clicking `Clone or Download` --> `Download ZIP`, it will normally be downloaded to your *Downloads* directory under the name **c102** or **c102.ZIP** (it might also have a suffix **-master**)
-  * Then copy or move the directory **c102** from **Downloads** to under your working directory **week2/**
-  * If the downloaded **c102** has the extension **.ZIP**, you likely need to expand the zipped file with command **unzip c102.ZIP**
+  * Download this whole directory by clicking `Clone or Download` --> `Download ZIP`, it will normally be downloaded to your *Downloads* directory under the name **c203** or **c203.ZIP** (it might also have a suffix **-master**)
+  * Then copy or move the directory **c203** from **Downloads** to under your working directory **week2/**
+  * If the downloaded **c203** has the extension **.ZIP**, you likely need to expand the zipped file with command **unzip c203.ZIP**
 
 **How to dowload a file or the whole directory from this github site into your JupyterLab working directory?**  Sorry, I still don't know howto. If you know, please advise. Thanks! 
 
