@@ -1,4 +1,4 @@
- c203 Week 03 Story
+ c203: Week 03 Story - This page is under construction, please visit later. It shoulkd be ready by Sunday midnight.
 =======
 Inspired by our lectures last week, I wants to implement sequential and
 binary search, and through these implementations, convince myself about
@@ -27,9 +27,9 @@ for (i=0; i<m; i++) {
 }   
 
 ```
-In my intention, I'll function `search(key, A, n, &cmps)` that search 
+In my intention, function `search(key, A, n, &cmps)` searches 
 for `key` in the array A[n], and also places the number of comparisons 
-employed for the search into `cmps`. The function should return the 
+employed during the search into `cmps`. The function should return the 
 index `i` where `A[i]==key`, or `NOT_FOUND` (which should be pre-defined 
 as `-1`, right?) otherwise. 
 
@@ -88,7 +88,7 @@ in which the first step ask `gcc` to translate `main.c` into the
 *object* format, which is a file in machine language, but is not
 an executable file (because, say, there is no possible link to 
 `createSortedArray()` ). The last step links the object files 
-and create the executable `search`.  
+together and create the executable `search`.  
 
 ### First attempt to use make, to compile and test
 But hand on, we knew a bit about `make`, and I want to employ that for
@@ -102,7 +102,7 @@ and is associated with one or more Terminal's commands (such as `gcc`).
   * If I run `make` from Terminal, it automatically runs the commands
 which are associated with the *first* target in my `Makefile`.
 
-So, I use `Text File` to write my first ever `Makefile` with the content:
+So, I use `Text File` to write my first ever `Makefile` with the content of:
 ```make
 # my first Makefile just has one simple target
 all: intArray.h intArray.c main.c Makefile
@@ -127,8 +127,8 @@ project. Great!
 
 ### Adding sequential search module
 Now, of course, the best way to implement sequential search is just 
-to build 2 other text files,namely, `search.h` and `seq_search.c`.
-Forthunately, I already have the .c program for sequential search
+to build 2 other text files, namely, `search.h` and `seq_search.c`.
+Fortunately, I already have the .c program for sequential search
 in the lecture slides! I came there, copy the content, paste and 
 save it as "seq_search.c". Essentially, I don't need to make a lot 
 of changes here, just some simple things to pack that C program
@@ -147,19 +147,8 @@ corrections of syntax errors.
 ### Adding binary search module
     
 
-Content for this week: a number of file for a software called `toy`:
-  * `intArray.h` and `intArray.c`: functions for generating a random array and counting number of prime numbers in an array
-  * `prime.h` and `prime.c`: functions for checking if a number is a prime number and ...
-  * `main.c` : the main program that actually employ the fuctions defined in the above module to do some (kind of) experiment on primr numbers
-  * `Makefile1`, `Makefile2`, `Makefile3`, `Makefile4` : these files are all equivalent to some extent, and is a valid candidate for the `Makefile` of this `toy` project. If you want to use, say, `Makefile4` you need to:
 
-      cp Makefile 4 Makefile
-
-      make
- 
-    and that `make` will compile the `toy` software for you.
-  * Why 4 versions of `Makefile`? Just only for you to compare them and learn a bit about Makefile.   
-
+# How to use?
 If you just want a single file, say, `main.c`:
   * Click on `main.c` and you will see its content 
   * Copy the content and paste into your jEdit/editor window, then save as `main.c`
