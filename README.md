@@ -27,8 +27,125 @@ for (i=0; i<m; i++) {
 }   
 
 ```
+In my intention, I'll function `search(key, A, n, &cmps)` that search 
+for `key` in the array A[n], and also places the number of comparisons 
+employed for the search into `cmps`. The function should return the 
+index `i` where `A[i]==key`, or `NOT_FOUND` (which should be pre-defined 
+as `-1`, right?) otherwise. 
 
+As I want to measure the speed of the algorithm `search`, it's not fair
+to run just one searach, so I will prepare an array `B[m]` of search keys,
+perform these `m` search then get average performance.
 
+For simplicity, I will just deal with `int`. That is, `A[n]` and `B[m]`
+are just arrays of `int`. I imagine that at the end, I want to test
+my program with various values of `m` and `n`, so `A` and `B` should 
+be declared as `int *` for use with dynamic memory!
+
+**Trying multiple files:**
+Of course I could put all needed functions inside `main.c`. 
+But how about putting all tools for creating arrays is one .c file,
+and creating `search()` in another file? Wow, it would be a good idea:
+next time, whenever I want to use these tools again in a new project,
+I just need to copy these files into the new project folder for use.
+That would save my time!
+
+So I build `intArray.c` with 2 functions: 
+```c
+/*  Creates an array of n integers
+    and populates it random numbers, in strictly increasing order     */
+int *createSortedArray(int n);
+
+/*  Creates an array of m integers,
+    and populates it with random elements of array A[n] */
+int *createRandomArrayFromA(int m, int *A, int n);
+``` 
+As a rule, I should place the above two function prototype. But there is
+a better way: I created file `intArray.h` that essentially contains
+these 2 prototypes. Then, on top of my `main.c` I put:
+```c
+#include "intArray.h"
+```
+Note that: a) `intArray.h` is called a *header file*, and b) in the above 
+line, we use **"intArray.h"**, not **<intArray.h>**.
+    
+### First attempt to  compile
+Now, after finishing the typing for `main.c`, `intArray.h`, and `intArray.c`,
+I am thinking about compiling. I can use the Terminal to compile with:
+```bash
+gcc -Wall -o search main.c intArray.c
+```
+which tell `gcc` to compile and pack both `main.c` and `intArray.c` into
+a single executable file `search` (note: if you do the same thing, you
+should comment out the line starting with `search()` in `main.c`).
+I also can compile my unfinished project in 3 steps as follow:
+```bash
+gcc -Wall -c main.c
+gcc -Wall -c intArray.c
+gcc -o search main.o search.o
+```
+in which the first step ask `gcc` to translate `main.c` into the 
+*object* format, which is a file in machine language, but is not
+an executable file (because, say, there is no possible link to 
+`createSortedArray()` ). The last step links the object files 
+and create the executable `search`.  
+
+### First attempt to use make, to compile and test
+But hand on, we knew a bit about `make`, and I want to employ that for
+auto-compiling my project. So far I know that
+  * If from Terminal, I invoke `make`, the command will automatically
+reads from a special text file named `Makefile`, and I need to build
+that `Makefile` myself; 
+  * My `Makefile` should optionally have a number of defintions, and, most 
+importantly, one or a few *targets*. Each target has a *target name* 
+and is associated with one or more Terminal's commands (such as `gcc`).
+  * If I run `make` from Terminal, it automatically runs the commands
+which are associated with the *first* target in my `Makefile`.
+
+So, I use `Text File` to write my first ever `Makefile` with the content:
+```make
+# my first Makefile just has one simple target
+all: intArray.h intArray.c main.c Makefile
+	gcc -Wall -o search main.c intArray.c
+
+# Explanations:
+#  "all" is a target
+#  target "all" depends on 4 files: intArray.h, intArray.c, ...
+#     which means that whenever at least one of these files changed
+#     the target need to be rebuilt by "make"
+#  target "all" is associated with the command gcc
+#     which means that when builds or rebuilds the target,
+#     "make" just run the command gcc
+#
+# Important note: the Makefile syntax is a bit picky, before each 
+#    associated command (such as the above "gcc") we have to put one
+#    exacly one "<TAB>" character, blank characters NOT accepted.   
+```
+Now, from Terminal, I run `make`, and voila, I can see that the above
+`gcc` command was invoked! After that I can try `./search` to run my
+project. Great!
+
+### Adding sequential search module
+Now, of course, the best way to implement sequential search is just 
+to build 2 other text files,namely, `search.h` and `seq_search.c`.
+Forthunately, I already have the .c program for sequential search
+in the lecture slides! I came there, copy the content, paste and 
+save it as "seq_search.c". Essentially, I don't need to make a lot 
+of changes here, just some simple things to pack that C program
+into *a function*. I ended up with my files (`search.h`)[./search.h]
+and (`seq_search.c`)(./seq_search.c).
+
+After that I change my `Makefile` to:
+```make
+# my 2nd Makefile, with added seq_search.c
+all: intArray.h intArray.c main.c Makefile seq_search.c
+	gcc -Wall -o search main.c intArray.c
+```
+Now, I can try `make` and `search`, it works for me after a few 
+corrections of syntax errors.
+
+### Adding binary search module
+    
 
 Content for this week: a number of file for a software called `toy`:
   * `intArray.h` and `intArray.c`: functions for generating a random array and counting number of prime numbers in an array
