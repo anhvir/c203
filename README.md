@@ -1,6 +1,6 @@
 # c203: Week 03 Story
 
-## Step-to-step building a multiple-file C project to test the performance of both sequential and binary search algorithms. Also showing how to use "make" for compiling two programs in one shot.
+*This is my story that shows a step-to-step building of a multiple-file C project to test the performance of both sequential and binary search algorithms. It also shows how to use "make" to compile two programs in one shot as wel as some simple but useful C stuffs.*
 
 Inspired by our lectures last week, I wants to implement sequential and
 binary search, and through these implementations, convince myself about
@@ -260,7 +260,7 @@ This story gives examples of
 
   * building a multiple-file C project,
   * C header files,
-  * using `#ifndef ... #endif` i  header files, 
+  * using `#ifndef ... #endif` in header files, 
   * using `make` and `Makefile`, 
   * organizing experiments to measure algorithm/program performance, 
   * timing in a fragment of C code, 
