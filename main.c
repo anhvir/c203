@@ -1,7 +1,7 @@
 /* Anh Vo, avo@unimelb.edu.au, for unimelb.COMP20003.Workshop.Week3 */
 
 /* This file is a driver for "search", which is 
-   a toy multiple-file project demonstrates the use of:
+   a toy multiple-file project, demonstrating the use of:
    - generating a sorted array of integers,
    - sequential and binary search,
    - timing and
