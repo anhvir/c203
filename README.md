@@ -281,7 +281,13 @@ If you want to download the whole directory:
   * Then copy or move the directory **c203** from **Downloads** to under your working directory **week2/**
   * If the downloaded **c203** has the extension **.ZIP**, you likely need to expand the zipped file with command **unzip c203.ZIP**
 
-**How to transfer a file or the whole directory from this github site into your JupyterLab working directory?**  Sorry, I still don't know howto. If you know, please advise. Thanks! 
+### How to transfer a file or the whole directory from this github site into your JupyterLab working directory?
+
+You can just use `git clone`. Run the following command in a Jupyter's Terminal window:
+'''bash
+git clone http://github.com/anhvir/c203
+'''
+And you will see a new folder `c203` under your current directory.
 
 -------------------------------------------------------------
 by avo@unimelb.edu.au, for use in unimelb COMP20003 workshops.
