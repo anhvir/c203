@@ -284,9 +284,9 @@ If you want to download the whole directory:
 ### How to transfer a file or the whole directory from this github site into your JupyterLab working directory?
 
 You can just use `git clone`. Run the following command in a Jupyter's Terminal window:
-'''bash
+```bash
 git clone http://github.com/anhvir/c203
-'''
+```
 And you will see a new folder `c203` under your current directory.
 
 -------------------------------------------------------------
