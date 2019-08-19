@@ -1,6 +1,8 @@
 # c203: Week 04 
 
-This week we have 3 tiny small programs (and an accompanied `Makefile`)
+In addition to Programming 3.1 in the Notebook this week: 
+
+We have 3 tiny small programs (and an accompanied `Makefile`)
 to play with pointers, linked lists and `gdb`/`valgrind`.
 You'd better to follow the instructions in the bottom to transfer the 
 whole directory to your Jupyter workplace first. Then run 
@@ -49,10 +51,6 @@ figure out the problem with the code.
 
 * Learn this [`Makefile`](./Makefile) and build a similar one
 for the `Programming 3.1` of the lab.  
-
-### Note:
-If you haven't tried `bin_search` and `seq_search`, you might want
-to have a look at the last week's description, which is [here](./last_week_README.md).
 
 -------------------------------------------------------------------
 ## HOW_TO: download/copy the files from this github repository
