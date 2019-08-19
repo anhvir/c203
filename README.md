@@ -10,7 +10,32 @@ whole directory to your Jupyter workplace first. Then run
 make
 ```
 and try.
+The programs include:
+* [`list_abc.c`](/.list_abc.c): a very, very simple program that
+created 3 separate data nodes and then join them together into
+a list. Then, it will insert one node in the midle of the list.
+The program works, but it probably has some errors. If you try:
+```bash
+make
+gdb ./list_abc
+```
+You probably see that the program is correct. Now try:
+```bash
+valgrind ./list_abc
+```
+You'll see that the program has some memory leaks. Do what `valgrind`
+told you to do and then try to find the errors and fix it.
 
+
+* [`llist.c`](./llist.c) is a more serious program to work with lists.
+It creates a list of 10 integers, and then deletes some of them.
+Here, the function `delete_kth` employs a *pointer to pointer* variable,
+which helps to keeps the function short, but which makes the function
+a bit difficult to understand. Try to understand it. Keep in mind
+that after `pa= &a;`, `*pa` and `a` both refer to *the same object* in
+ the memory. 
+Also note that `llist.c` has errors. It's worth to try with `gdb` first
+this time.    
 
 
 * **HOWTO:** Use `random_friend.c` which contains a number of runtime errors 
