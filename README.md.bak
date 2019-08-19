@@ -1,21 +1,20 @@
 # c203: Week 04 
 
 For this week, the files from Week 3 are reused. Plus, the file
-`random_friend.c` (which contains errors) from Week 2 is added, and
+random_friend.c (which contains errors) from Week 2 is added, and
 a new target `afriend` is inserted into the `Makefile`.
 
 During the lab this week, when learning gdb and valgrind, and when
-implementing `Programming 3.1` you can:
+inplementing `Programming 3.1` you can:
 
 * Use `random_friend.c` which contains a number of runtime errors 
-to practice with `gdb` and `valgrind`. 
-
-* Start `gdb` by using Jupyter's Terminal to run
+to practise with `gdb` and `valgrind`. 
+* To start `gdb` use Jupyter's Terminal to run
 ```bash
 make
 gdb -tui ./afriend
 ```
-Then, inside `gdb` first try the following sub-commands
+Then, inside gdb start which the following sub-commands
 ```bash
 r
 where
@@ -26,7 +25,7 @@ s
 ```
 You might realize that it take too long to run the program step by
 step. You can avoid it by
-first shorten the loops in `random_friend.c` by changing line 20 from
+  * First shorten the loops in random_friend.c by changing line 20 from
 ```c
 	int n= 50;
 ```
@@ -34,13 +33,13 @@ to
 ```c
 	int n= 2;
 ```
-and the rerun `make` and `gdb`.   
+and rerun `make` and `gdb`.   
 
-* Start valgrind with
+* To start valgrind with
 ```bash
 valgrind ./afriend
 ```
-`valgrind` will output a report. You should analyse the report to
+`valgrind` will output a report. You can analyse the report to
 figure out the problem with the code.   
 
 * Learn this [`Makefile`](./Makefile) and build a similar one
