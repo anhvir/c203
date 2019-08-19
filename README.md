@@ -1,13 +1,17 @@
 # c203: Week 04 
 
-For this week, the files from Week 3 are reused. Plus, the file
-`random_friend.c` (which contains errors) from Week 2 is added, and
-a new target `afriend` is inserted into the `Makefile`.
+This week we have 3 tiny small programs (and an accompanied `Makefile`)
+to play with pointers, linked lists and `gdb`/`valgrind`.
+You'd better to follow the instructions in the bottom to transfer the 
+whole directory to your Jupyter workplace first. Then run 
+```bash
+make
+```
+and try.
 
-During the lab this week, when learning gdb and valgrind, and when
-implementing `Programming 3.1` you can:
 
-* Use `random_friend.c` which contains a number of runtime errors 
+
+* **HOWTO:** Use `random_friend.c` which contains a number of runtime errors 
 to practice with `gdb` and `valgrind`. 
 
 * Start `gdb` by using Jupyter's Terminal to run
