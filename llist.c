@@ -61,17 +61,27 @@ list_t insert_front(list_t list, int data){
 // of " list_t *p "
 // You can certainly use "list_t p" and change the function accordingly. 
 int delete_kth(list_t *plist, int k) {
+	// plist is declared as (list_t *)
+	//   so with the call delete_kth(&list,...)
+	//   "*plist" and "list" refer to the same object 
 	list_t *p;
 	int data;
 	// skips k-1 element
 	for (p= plist; k>1; k--) {
 		p= &( (*p)->next );
+		// now "*p" is the same as the previous "next"
+		//    and if we change "*p"
+		//    that just means we change the previous "next" pointert
 	}
 	// keeps the returned data, which is of the element *after* "*p"
 	data= (*p)->data;
 	// makes link from *p to its 2nd next element
-	*p= (*p)->next;
-	// done, but there are a lot of errors here!	
+	*p= (*p)->next;  // before asignment:
+					 //   "*p" is the same as the previous "next" pointer 
+                     //   ie "*p" points to the current element 
+					 //   (which will be deleted)
+				     //   "(*p)->next" is the address of the next element    
+	// done, but there are some errors here perhaps.	
 	return data;	
 }
 

@@ -41,14 +41,6 @@ int main(int argc, char *argv[]) {
 	printf("My list becomes \nlist= ");
 	print_list(head);
         
-	a= safe_malloc(sizeof(*a));
-	b= safe_malloc(sizeof(*b));
-	c= safe_malloc(sizeof(*a));
-	a= safe_malloc(sizeof(*a));
-
-	a->data= 1;
-
-			
 	return 0;
 }
 
