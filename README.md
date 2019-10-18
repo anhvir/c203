@@ -1,9 +1,21 @@
- c203 Week 11:
-=======
-  * `11_C203_18S2.pdf`: slides for this week.
+COMP20003 Week 12: Notes on assignment 2
+=======================
 
 
--------------------------------------------------------------
-by anhvir@gmail.com, for use in unimelb COMP20003 workshops.
+  # How to do the timing?
+Function clock() in <time.h> return the current time. The returned value belongs
+to the data type clock_t, but we don't need to know it. The code below shows
+how to do the timing.
+```c
+#include <time.h>
 
-For a teaching week, a new content is (normally) uploaded at the very beginning of the week, and that content is removed one week later.
+   clock_t start= clock();  // start= current time
+
+   // code fragment we want to do timing
+
+   double secs= ((double) (clock() - start)) / CLOCKS_PER_SEC;
+   printf("Time passed= %.6f seconds\n", secs);
+
+  # What is minimal requirement for the experiment?
+    <I will fill in a bit later, but definitely by Sunday> 
+
