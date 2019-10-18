@@ -15,6 +15,7 @@ how to do the timing.
 
    double secs= ((double) (clock() - start)) / CLOCKS_PER_SEC;
    printf("Time passed= %.6f seconds\n", secs);
+```
 
   # What is minimal requirement for the experiment?
     <I will fill in a bit later, but definitely by Sunday> 
