@@ -72,3 +72,6 @@ To have a better estimation of time: Just run `./pacman 2 ai max 1000` to see ho
    
 Happy Coding!
 
+
+====================================
+Prepared by Anh Vo avo@unimelb.edu.au for comp20003.
