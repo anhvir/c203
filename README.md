@@ -18,5 +18,57 @@ how to do the timing.
 ```
 
   # What is minimal requirement for the experiment?
+  You need to run at least 72 experiments ( 3 levels x 2 propagations x 4 budgets x 3 samples ). Suppose that your program outputs required data into 
+output.txt as asked for in the specs. Then you can run the following script
+to run all 72 experiments and gather all output into a file called 
+acc_output.txt. Later on you can read that file and build your tables and graphs.
+The content of the script is:
+```bash
+for level in 1 2 3 
+do
+  for s in max avg 
+  do
+    for budget in 10 100 1000 2000
+    do  
+      for exp in 1 2 3 
+      do  
+        echo ./pacman $level ai $s $budget >> acc_output.txt 
+        ./pacman $level ai $s $budget 
+        cat ./output.txt >> acc_output.txt
+      done
+    done
+  done
+done
+```
+  # How to use the above script: 
+First copy that content into file `run_expts` in your assg2 directory.
+Then execute command:
+```bash
+chmod 777 ./run_expts
+```
+Now, it's ready for running. You will run it with:
+```bash
+./run_expts
+```
+  #Note 1: 
+The script will invoke your program 72 times! Make sure that before 
+running script you change `Makefile` to have the flag `-O3` to allow the executable program run faster. That is, the 
+first 3 lines of `Makefile` now should be changed to:
+```make
+CC=gcc
+CPPFLAGS=-Wall   -O3 -std=gnu99
+#CPPFLAGS=   -g  -std=gnu99
+``` 
+and of coure, run
+```bash
+make clean
+make
+```
+to rebuild pacman after chaging `Makefile`.
+
+  #Note 2:
+The script might take a few hours to run (perhaps 4-8 hours). Make sure that you keep your laptop connected to the power!
+   
+
     <I will fill in a bit later, but definitely by Sunday> 
 
