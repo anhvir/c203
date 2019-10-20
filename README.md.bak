@@ -59,12 +59,12 @@ CC=gcc
 CPPFLAGS=-Wall   -O3 -std=gnu99
 #CPPFLAGS=   -g  -std=gnu99
 ``` 
-and of course, run
+and of coure, run
 ```bash
 make clean
 make
 ```
-to rebuild pacman after changing `Makefile`.
+to rebuild pacman after chaging `Makefile`.
 
   #Note 2:
 The script might take a few hours to run (perhaps 4-8 hours). Make sure that you keep your laptop connected to the power!
