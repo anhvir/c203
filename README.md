@@ -68,7 +68,7 @@ to rebuild `pacman` after changing `Makefile`.
 
   # Note 2:
 The script might take a few hours to run (perhaps 4-8 hours in my trial, but it might be totally different for your case). Make sure that you keep your laptop connected to the power!
-To have a better estimation of time. Just run `./pacman 2 ai max 1000` to see how long it takes, then multiply that time by 72 * 1.5 (well, I hope that the coefficient 1.5 covers well the worst case!) 
+To have a better estimation of time: Just run `./pacman 2 ai max 1000` to see how long it takes, then multiply that time by 72 * 1.5 (well, I hope that the coefficient 1.5 covers well the worst case!) 
    
-
+Happy Coding!
 
