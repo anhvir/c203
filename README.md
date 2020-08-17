@@ -1,4 +1,4 @@
-# c203: Week 03: Sample multi-file project and Makefile
+# comp20003-Week 03: Sample multi-file project and Makefile
 
 
 How to use:
@@ -9,9 +9,9 @@ How to use:
    make
 ```
  * Explore `main.c`, `factorial.c`, `factorial.h` and `Makefile`
-   to understand how to make a simple package with 2 .c files
- * Explore Makefile.ver1 and Makefile.ver1_explained. These
-   two files are the same, and each is equivalent to Makefile
+   to see how to make a simple package with 2 .c files
+ * Explore `Makefile.ver1` and `Makefile.ver1_explained`. These
+   two files are the same, and each is equivalent to the `Makefile`
  
 
 
