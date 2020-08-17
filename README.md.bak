@@ -2,7 +2,7 @@
 
 
 How to use:
- * Download the whole directory to JupyterHub working directory (see below)
+ * Download the whole directory to JupyterHub wworking directory (see below)
  * Compile the package with
 ```bash
    cd c203
