@@ -30,7 +30,7 @@ $(EXE): $(HDR) $(OBJ) Makefile
 
 
 clean: 
-	rm -f $(OBJ1) $(OBJ2) $(EXE1) $(EXE2)
+	rm -f $(OBJ) $(EXE) 
 
 $(OBJ): $(HDR)
 

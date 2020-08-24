@@ -5,6 +5,9 @@ CFLAGS = -Wall
 # just like #define in C, here:
 #    CC becomes a symbolic name, and is equivalent to "gcc"
 #    CFLAGS is equivalent to "-Wall"
+# use CFLAGS = -g -Wall
+# if you want to run debugging tools such as valgrind and gdb
+# but note that the flag "-g" makes the excutable code slower.
 
 # define libraries to be linked (for example -lm)
 LIB = 
@@ -33,14 +36,9 @@ EXE = factorial
 $(EXE): $(HDR) $(OBJ) Makefile
 	$(CC) $(CFLAGS) -o $(EXE) $(OBJ) $(LIB)
 # so, factorial (ie EXE) depends on 
-#   factorial.c main.o factorial.o
+#   main.o factorial.o
 # and is associated with command:
 #   gcc -Wall -o main.o factorial.o
-# Note that we don't actually have the factorial.o target
-# Whenever "make" see a dependency "somename.o" it automatically
-#   generate a target:
-#somename.o: somename.c
-#    gcc -c somename.c
 
 
 clean: 
