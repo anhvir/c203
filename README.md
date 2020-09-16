@@ -1,1 +1,1 @@
-# comp20003-Week 06: 
+avo.zip is my simple solution for ass1. Enjoy!
